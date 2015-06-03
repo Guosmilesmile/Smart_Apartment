@@ -1,0 +1,23 @@
+<?xml version="1.0"?>    
+<!DOCTYPE hibernate-mapping PUBLIC     
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"    
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">    
+<hibernate-mapping>    
+    <class name="com.test.bean.Repair" table="r_repair" >  
+        <id name="id" type="int" column="r_id">  
+           <generator class="native"/>   
+        </id>  
+        <property name="sturoom" type="java.lang.Integer">  
+            <column name="r_sturoom" length="11" />  
+        </property> 
+        <property name="repaircontent" type="java.lang.String">  
+            <column name="r_repaircontent" length="255" />  
+        </property> 
+        <property name="telphone" type="java.lang.String">  
+            <column name="r_telphone" length="255" />  
+        </property> 
+        <property name="flag" type="java.lang.Integer">  
+            <column name="r_flag" length="1" />  
+        </property> 
+    </class>  
+</hibernate-mapping>  

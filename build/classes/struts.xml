@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">   
+<struts>   
+    <constant name="struts.custom.i18n.resources" value="message"></constant>  
+    <constant name="struts.objectFactory" value="spring"></constant>  
+    <constant name="struts.devMode" value="true" />  
+      
+    <package name="struts2" extends="struts-default,json-default">  
+        <action name="login" class="LoginAction">  
+            <result name="success" type="redirect">/font/main.jsp</result>  
+            <result name="input">/font/Login_index.jsp</result>  
+            <result name="error">/font/Login_index.jsp</result>  
+        </action>  
+        <action name="register" class="RegisterAction">  
+            <result name="success" type="redirect">/font/main.jsp</result>  
+            <result name="input">/font/register_index.jsp</result>  
+            <result name="error">/font/register_index.jsp</result>  
+        </action>  
+        <action name="getallrepair" class="GetAllRepairAction">  
+                <result type="json" >  
+                   <param name="root">jsonResult</param>  
+            </result>  
+        </action> 
+         <action name="addrepair" class="AddRepairAction">  
+            <result name="success" type="redirect">/font/font_repair.jsp</result>  
+            <result name="input">/font/font_repair.jsp</result>  
+            <result name="error">/font/font_repair.jsp</result>  
+        </action> 
+        <action name="waterelect" class="WaterElectAction">
+        	<result type="json">
+        		<param name="root">jsonResult</param>
+        	</result>
+        </action>
+        <action name="addmessage" class="AddMessageAction">
+        	 <result name="success" type="redirect">/font/message-board_index.jsp</result>  
+            <result name="input">/font/Login_index.jsp</result>  
+            <result name="error">/font/message-board_index.jsp</result>  
+        </action>
+         <action name="getallmessage" class="GetAllMessageAction">
+        	<result type="json">
+        		<param name="root">jsonresult</param>
+        	</result>
+        </action>
+    </package>  
+      
+</struts>  
